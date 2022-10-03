@@ -1,20 +1,24 @@
 import java.util.Random;
+import com.github.javafaker.Faker;
 public class CourierGenerate {
 
     public static Courier getDefaultCourier(){
-        return new Courier("testlogin", "testpass", "testFirstName");
-    }
+        Faker faker = new Faker();
+        return new Courier(faker.name().username(), faker.internet().password(), faker.name().firstName());}
+
     public static Courier getCourierWithoutPassword(){
-        return new Courier("testlogin", null, "testFirstName");
+        Faker faker = new Faker();
+        return new Courier(faker.name().username(), null, faker.name().firstName());
     }
 
     public static Courier getCourierWithoutLogin(){
-        return new Courier(null, "testpass", "testFirstName");
+        Faker faker = new Faker();
+        return new Courier(null, faker.internet().password(), faker.name().firstName());
     }
 
-    public static Courier getRundomCourier(){
+   /* public static Courier getRundomCourier(){
         return new Courier("Courier"+new Random().nextInt(1000), "pass"+new Random().nextInt(100), "RundomCourier");
 
-      }
+     }*/
 
 }

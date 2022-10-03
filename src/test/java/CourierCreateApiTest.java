@@ -4,6 +4,8 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.net.URL;
+
 import static org.apache.http.HttpStatus.*;
 import static org.junit.Assert.*;
 
@@ -15,9 +17,10 @@ public class CourierCreateApiTest {
 
     @Before
     public void setUp() {
+
         courier = CourierGenerate.getDefaultCourier();
         courierClient = new CourierClient();
-        RestAssured.baseURI = "https://qa-mesto.praktikum-services.ru";
+        RestAssured.baseURI = BasePage.URL;
 
     }
     @After

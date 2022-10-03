@@ -1,12 +1,12 @@
 -------------------------------------------------------------------------------
 Test set: LoginCourierApiTest
 -------------------------------------------------------------------------------
-Tests run: 6, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 127.227 s <<< FAILURE! - in LoginCourierApiTest
-courierLoginAlsoAllRequiredDataTest(LoginCourierApiTest)  Time elapsed: 62.192 s  <<< FAILURE!
+Tests run: 6, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 125.626 s <<< FAILURE! - in LoginCourierApiTest
+courierLoginAlsoAllRequiredDataTest(LoginCourierApiTest)  Time elapsed: 61.371 s  <<< FAILURE!
 java.lang.AssertionError: The Response Code of login without pass is incorrect expected:<404> but was:<504>
-	at LoginCourierApiTest.courierLoginAlsoAllRequiredDataTest(LoginCourierApiTest.java:58)
+	at LoginCourierApiTest.courierLoginAlsoAllRequiredDataTest(LoginCourierApiTest.java:57)
 
-courierAuthWithoutRequiredDateReturnErrorTest(LoginCourierApiTest)  Time elapsed: 60.867 s  <<< FAILURE!
+courierAuthWithoutRequiredDateReturnErrorTest(LoginCourierApiTest)  Time elapsed: 60.858 s  <<< FAILURE!
 java.lang.AssertionError: Courier Auth without password return Incorrect code expected:<400> but was:<504>
-	at LoginCourierApiTest.courierAuthWithoutRequiredDateReturnErrorTest(LoginCourierApiTest.java:93)
+	at LoginCourierApiTest.courierAuthWithoutRequiredDateReturnErrorTest(LoginCourierApiTest.java:92)
 

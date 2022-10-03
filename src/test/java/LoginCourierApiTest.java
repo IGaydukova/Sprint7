@@ -4,10 +4,9 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.util.Random;
-
 import static org.apache.http.HttpStatus.*;
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 
 public class LoginCourierApiTest {
     private Courier courier;
@@ -18,7 +17,7 @@ public class LoginCourierApiTest {
     public void setUp() {
         courier = CourierGenerate.getDefaultCourier();
         courierClient = new CourierClient();
-        RestAssured.baseURI = "https://qa-mesto.praktikum-services.ru";
+        RestAssured.baseURI = BasePage.URL;
     }
 
     @After
@@ -95,7 +94,7 @@ public class LoginCourierApiTest {
     //если авторизоваться под несуществующим пользователем, запрос возвращает ошибку +
     @Test
     public void courierLoginNotUserReturnErrorTest(){
-        courier = CourierGenerate.getRundomCourier();
+        courier = CourierGenerate.getDefaultCourier();
         ValidatableResponse loginResponse = courierClient.login(CourierCredentials.from(courier));
         int loginStatusCode = loginResponse.extract().statusCode();
         assertEquals("Courier error login for not user", SC_NOT_FOUND, loginStatusCode);

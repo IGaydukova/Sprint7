@@ -35,15 +35,10 @@ public class OrderCreateApiTest {
     public void setUp() {
         order = OrderGenerate.getDefaultOrderInfo(colorScooter);
         orderClient = new OrderClient();
-        RestAssured.baseURI = "https://qa-mesto.praktikum-services.ru";
+        RestAssured.baseURI = BasePage.URL;
 
     }
-    @After
-    public void tearDown(){
-    }
-
-
-  // Создание заказа
+   // Создание заказа
     @Test
     public void orderCanCreateTest() {
 

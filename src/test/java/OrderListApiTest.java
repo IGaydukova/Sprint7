@@ -4,9 +4,6 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.util.List;
-
-import static org.apache.http.HttpStatus.SC_CREATED;
-import static org.apache.http.HttpStatus.SC_OK;
 import static org.junit.Assert.assertEquals;
 
 public class OrderListApiTest {
@@ -20,7 +17,7 @@ public class OrderListApiTest {
 
 
         orderClient = new OrderClient();
-        RestAssured.baseURI = "https://qa-mesto.praktikum-services.ru";
+        RestAssured.baseURI = BasePage.URL;
 
     }
 
